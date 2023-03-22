@@ -16,7 +16,7 @@ const logsArray = [
     },
     {
         title:'Fourth Log',
-        entry: 'this is the fourth log',
+        entry: 'This is the fourth log',
         shipIsBroken: true
     }
 ];

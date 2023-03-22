@@ -1,26 +1,28 @@
 import React from 'react';
 import logsArray from '../models/logsArray';
 
-function Index() {
-    // console.log(props.logs);
+function Index(props) {
+    console.log(props.logs);
     return (
         <div>
             <title>Index View</title>
             <body style={{backgroundColor: "gray", textAlign: 'center', fontSize: '25pt'}}>
-                <h1>Index</h1>
-                <ul style={{listStyle: 'none'}}>
-                </ul>
-                <ul style={{listStyle: 'none'}}>
-                    {logsArray.map((logs, index) => 
+                <h1>Log Entries</h1>
+                <ul style={{listStyle: 'none', textAlign: 'left', border: '5px solid black', padding: '20px'}}>
+                    {props.logs.map((logs, index) => 
                         <li key={index}>
                             <a href={`/logs/${logs._id}`}><strong>{logs.title}<br />{logs.entry}</strong></a>
+                            <br />
+                            <label style={{fontSize: '15pt'}}><input type="checkbox" name="shipIsBroken"/>
+                            Ship is Broken?
+                            </label>
                         </li>
                     )}
                 </ul>
 
                 <a href="/logs/new">Add...</a>
 
-                <br/><br/><br/>
+                <br/><br />
 
                 <form action="/logs/seed" method="POST">
                     <button>SEED</button>
