@@ -10,13 +10,13 @@ function Index() {
                 <h1>Index</h1>
                 <ul style={{listStyle: 'none'}}>
                 </ul>
-                {/* <ul style={{listStyle: 'none'}}>
-                    {props.logs.map((logs, index) => 
+                <ul style={{listStyle: 'none'}}>
+                    {logsArray.map((logs, index) => 
                         <li key={index}>
                             <a href={`/logs/${logs._id}`}><strong>{logs.title}<br />{logs.entry}</strong></a>
                         </li>
                     )}
-                </ul> */}
+                </ul>
 
                 <a href="/logs/new">Add...</a>
 
